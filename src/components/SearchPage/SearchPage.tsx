@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { MyDispatch } from '../../store';
-import { searchBooks } from '../../store/actions/searchPageAction';
+import { getSearchBooks } from '../../store/actions/searchPageAction';
 
 function SearchPage() {
   const [searchValue, setSearchValue] = useState<string>("");
-  const [categoties, setCategoties] = useState<string>("all");
+  const [categories, setCategories] = useState<string>("all");
   const [sortingBy, setSortingBy] = useState<string>("relevance");
   const dispatch:MyDispatch = useDispatch();
   
   function search(e:any) {
     e.preventDefault();
-    dispatch(searchBooks(searchValue))
+    dispatch(getSearchBooks(searchValue,categories,sortingBy))
   }
 
   return (
@@ -22,14 +22,14 @@ function SearchPage() {
         </label>
         <label>
           <span>Categoties</span>
-          <select value={categoties} onChange={(e) =>setCategoties(e.target.value)}>
-            <option>all</option>
-            <option>art</option>
-            <option>biography</option>
-            <option>computers</option>
-            <option>history</option>
-            <option>medical</option>
-            <option>poetry</option>
+          <select value={categories} onChange={(e) =>setCategories(e.target.value)}>
+            <option>All</option>
+            <option>Art</option>
+            <option>Biography</option>
+            <option>Computers</option>
+            <option>History</option>
+            <option>Medical</option>
+            <option>Poetry</option>
           </select>
         </label>
         <label>
