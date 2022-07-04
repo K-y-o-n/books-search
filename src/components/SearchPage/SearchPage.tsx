@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { MyDispatch } from '../../store';
-import { getSearchBooks } from '../../store/actions/searchPageAction';
+import { getBooksList } from '../../store/actions/searchPageAction';
 
 function SearchPage() {
   const [searchValue, setSearchValue] = useState<string>("");
-  const [categories, setCategories] = useState<string>("all");
+  const [categories, setCategories] = useState<string>("All");
   const [sortingBy, setSortingBy] = useState<string>("relevance");
   const dispatch:MyDispatch = useDispatch();
   
   function search(e:any) {
     e.preventDefault();
-    dispatch(getSearchBooks(searchValue,categories,sortingBy))
+    dispatch(getBooksList(searchValue,categories,sortingBy))
   }
 
   return (
