@@ -34,7 +34,7 @@ function SearchResultPage() {
                 <span className='book-preview__authors'>{book.authors ? book.authors.join():"No Author"}</span>
               </div>
             )
-          }):"Ничего не найдено"}
+          }):books == undefined ?"Use the search to find a specific book":"Unfortunately, the search for the selected parameters did not return any results. Try searching with other parameters."}
         </div>
         {books!==undefined && books.length? <button className='load-more' onClick={loadMore}>Load more</button> :null}
       </div>

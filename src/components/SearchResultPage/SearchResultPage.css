@@ -13,6 +13,10 @@
           align-items: center;
 }
 
+.total-items {
+  font-weight: 600;
+}
+
 .books-list {
   display: -webkit-box;
   display: -ms-flexbox;
