@@ -23,6 +23,11 @@ export interface ISearchData {
   searchResult: TSearchResultArray
 }
 
+export interface ILoadMoreData {
+  searchResult: TSearchResultArray,
+  startIndex: number
+}
+
 export enum SearchBooksActionTypes {
   ADD_BOOKS_LIST= "ADD_BOOKS_LIST",
   LOAD_MORE_TO_BOOKS_LIST="LOAD_MORE_TO_BOOKS_LIST"
