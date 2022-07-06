@@ -1,6 +1,10 @@
 .wrapper {
   margin: 0 auto;
   width: 1260px;
+  min-height: calc(100vh - 250px);
+  padding-top: 25px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .book {

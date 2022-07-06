@@ -19,7 +19,7 @@ function SearchPage() {
   }
 
   return (
-    <div className='container'>
+    <div className='container-search'>
       <form className='search-form'>
         <h2 className='search-form__title'>Boo<span>k</span>s Search</h2>
         <label className='search-form__input'>

@@ -1,0 +1,35 @@
+.spinner {
+  font-size: 30px;
+  font-weight: 800;
+  -webkit-animation-name: spinner;
+          animation-name: spinner;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes spinner {
+  from {
+    color: black;
+  }
+  50% {
+    color: #dddddd;
+  }
+  to {
+    color: black;
+  }
+}
+
+@keyframes spinner {
+  from {
+    color: black;
+  }
+  50% {
+    color: #dddddd;
+  }
+  to {
+    color: black;
+  }
+}
+/*# sourceMappingURL=Spinner.css.map */

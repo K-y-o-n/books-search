@@ -19,6 +19,7 @@ export interface ISearchParams {
 };
 
 export interface IStore {
+  loading: boolean,
   books: ISearchData
 }
 
@@ -44,3 +45,4 @@ export enum SearchBooksActionTypes {
   LOAD_MORE_TO_BOOKS_LIST ="LOAD_MORE_TO_BOOKS_LIST",
   ADD_BOOK_IMG = "ADD_BOOK_IMG"
 };
+

@@ -19,7 +19,7 @@ function BookPage() {
       }
   
       const data = await response.json();
-      data.then(setIMG(data.volumeInfo.imageLinks.small))
+      setIMG(data.volumeInfo.imageLinks.small)
   
     } catch (err) {
       console.log(err);
