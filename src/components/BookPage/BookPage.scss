@@ -1,0 +1,39 @@
+.wrapper {
+  margin: 0 auto;
+  width: 1260px;
+}
+
+.book {
+  display: flex;
+  justify-content:space-between;
+}
+
+.book__img-wrapper {
+  width: 450px;
+  height: 500px;
+  background-color: rgb(230, 229, 229);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+    .book__img {
+      display: block;
+      max-width: 300px;
+      max-height: 400px;
+    }
+}
+
+.book__info {
+  width: 700px;
+  margin-right: 50px;
+
+    .book__info-categories{
+      font-style: italic;
+    }
+
+    .book__info-authors {
+      font-size: 18px;
+    }
+}
+
+
