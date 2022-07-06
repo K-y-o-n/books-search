@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 import { MyDispatch } from '../../store';
 import { getBooksList } from '../../store/actions/searchPageAction';
 import "./SearchPage.css"
@@ -8,11 +9,13 @@ function SearchPage() {
   const [searchValue, setSearchValue] = useState<string>("");
   const [categories, setCategories] = useState<string>("All");
   const [sortingBy, setSortingBy] = useState<string>("relevance");
+  const history = useNavigate()
   const dispatch:MyDispatch = useDispatch();
   
   function search(e:any) {
     e.preventDefault();
-    dispatch(getBooksList(searchValue,categories,sortingBy))
+    dispatch(getBooksList(searchValue,categories,sortingBy));
+    history("/");
   }
 
   return (
