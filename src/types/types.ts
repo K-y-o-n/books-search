@@ -6,11 +6,11 @@ export interface ISearchResult {
   authors: [],
   description: string,
   categories: [],
-  img: string,
-  bigImg?: string
+  img: string
 };
 
 export type TSearchResultArray = ISearchResult[]
+
 export interface ISearchParams {
   searchValue: string,
   categories: string,
@@ -42,7 +42,6 @@ export type TPayload = ISearchData|ILoadMoreData|IAddBookImg
 
 export enum SearchBooksActionTypes {
   ADD_BOOKS_LIST = "ADD_BOOKS_LIST",
-  LOAD_MORE_TO_BOOKS_LIST ="LOAD_MORE_TO_BOOKS_LIST",
-  ADD_BOOK_IMG = "ADD_BOOK_IMG"
+  LOAD_MORE_TO_BOOKS_LIST ="LOAD_MORE_TO_BOOKS_LIST"
 };
 

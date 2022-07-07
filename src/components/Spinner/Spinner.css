@@ -14,7 +14,7 @@
     color: black;
   }
   50% {
-    color: #dddddd;
+    color: rgb(221, 221, 221);
   }
   to {
     color: black;
@@ -26,10 +26,9 @@
     color: black;
   }
   50% {
-    color: #dddddd;
+    color: rgb(221, 221, 221);
   }
   to {
     color: black;
   }
-}
-/*# sourceMappingURL=Spinner.css.map */
+}/*# sourceMappingURL=Spinner.css.map */

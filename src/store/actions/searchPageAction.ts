@@ -21,6 +21,7 @@ export const loadMoreBooksAction = (loadMoreData:ILoadMoreData) => ({
 });
 
 
+// поиск книг по заданным параметрам
 export const getBooksList = (searchValue:string,categories:string,sortingBy:string) => async (dispatch:Dispatch<AnyAction>) => {
 
   dispatch(isLoading(true))
@@ -51,7 +52,7 @@ export const getBooksList = (searchValue:string,categories:string,sortingBy:stri
   }
 };
 
-
+// добавляет еще 30 результатов поиска по клику на кнопку "Load more"
 export const getMoreBooks = (searchValue:string,categories:string,sortingBy:string,startIndex:number) => async (dispatch:Dispatch<AnyAction>) => {
 
   dispatch(isLoading(true))
@@ -75,7 +76,7 @@ export const getMoreBooks = (searchValue:string,categories:string,sortingBy:stri
 };
 
 
-
+// ф. фильтрует полученные результаты поиска по выбранным категориям
 function searchDataFilter(data:any,categories:string) {
   let filteredData;
 

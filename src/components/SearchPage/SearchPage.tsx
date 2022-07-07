@@ -22,10 +22,12 @@ function SearchPage() {
     <div className='container-search'>
       <form className='search-form'>
         <h2 className='search-form__title'>Boo<span>k</span>s Search</h2>
+
         <label className='search-form__input'>
           <input  value={searchValue} onChange={(e) =>setSearchValue(e.target.value)}></input>
           <button onClick={e => search(e)}>Search</button>
         </label>
+
         <div>
           <label className='search-form__filter'>
             <span>Categoties</span>
@@ -39,6 +41,7 @@ function SearchPage() {
               <option>Poetry</option>
             </select>
           </label>
+          
           <label className='search-form__filter'>
             <span>Sorting by</span>
             <select value={sortingBy} onChange={(e) =>setSortingBy(e.target.value)}>

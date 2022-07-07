@@ -12,7 +12,6 @@ import { IStore } from '../../types/types';
 import Spinner from '../Spinner/Spinner';
 
 function SearchResultPage() {
-
   const books:TSearchResultArray = useSelector((state:IStore) => state.books.searchResult)
   const totalItems:TTotalItems = useSelector((state:IStore) => state.books.totalItems)
   const searchParams:ISearchParams = useSelector((state:IStore) => state.books.searchParams)
@@ -27,6 +26,7 @@ function SearchResultPage() {
     <main>
       <div className='container-search-result'>
         {totalItems!==undefined && books.length ? <span className='total-items'>Found {totalItems} results</span>:null}
+
         <div className='books-list'>
           {books!==undefined && books.length ? books.map((book,index)=>{
             return (
@@ -39,7 +39,9 @@ function SearchResultPage() {
             )
           }):books == undefined ?"Use the search to find a specific book":"Unfortunately, the search for the selected parameters did not return any results. Try searching with other parameters."}
         </div>
+
         {isLoading ? <Spinner />: null }
+
         {books!==undefined && books.length? <button className='load-more' onClick={loadMore}>Load more</button> :null}
       </div>
     </main>

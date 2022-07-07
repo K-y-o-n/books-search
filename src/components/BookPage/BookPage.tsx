@@ -7,7 +7,6 @@ import "./BookPage.css"
 function BookPage() {
   const id = useParams().id;
   const bookInfo = useSelector((state:IStore) => state.books.searchResult.find((el)=>el.id === id))
-  console.log(bookInfo,"bookInfo")
   const [IMG,setIMG]=useState("")
 
   async function getBookInfo(id:string) {

@@ -2,10 +2,11 @@
   width: 1260px;
   margin: 0 auto;
   height: 50px;
-  background-color: #e6e5e5;
+  background-color: rgb(230, 229, 229);
   text-align: center;
   padding-top: 15px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
-/*# sourceMappingURL=Footer.css.map */
+.footer span {
+  font-weight: 600;
+}/*# sourceMappingURL=Footer.css.map */

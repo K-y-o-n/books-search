@@ -4,7 +4,7 @@ import "./Footer.css"
 const Footer = () => {
   return (
     <div className='footer'>
-      Kyon 2022
+      <span>Kyon - 2022</span>
     </div>
   );
 };
