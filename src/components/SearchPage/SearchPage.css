@@ -1,37 +1,21 @@
-.container {
+.container-search {
   margin: 0 auto;
   width: 1260px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .search-form {
   width: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   height: 200px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   background-image: url(https://img2.goodfon.ru/wallpaper/nbig/9/30/knigi-kniga-stopka-knig.jpg);
   background-size: cover;
   background-position: center;
-  margin-bottom: 25px;
 }
 
 .search-form__title {
@@ -39,9 +23,8 @@
   font-size: 30px;
   letter-spacing: 0.25em;
 }
-
 .search-form__title span {
-  color: #fd00ff;
+  color: rgb(253, 0, 255);
   -webkit-text-stroke: 1px black;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -49,7 +32,6 @@
 .search-form__input {
   margin-bottom: 20px;
 }
-
 .search-form__input input {
   width: 300px;
   padding: 5px 10px;
@@ -57,7 +39,6 @@
   font-size: 15px;
   border-radius: 5px;
 }
-
 .search-form__input button {
   padding: 5px 10px;
   font-size: 15px;
@@ -68,13 +49,10 @@
   font-size: 15px;
   margin-right: 10px;
 }
-
 .search-form__filter select {
   width: 120px;
   padding: 3px 5px;
 }
-
 .search-form__filter .search-form__filter_margin {
   margin-right: 50px;
-}
-/*# sourceMappingURL=SearchPage.css.map */
+}/*# sourceMappingURL=SearchPage.css.map */

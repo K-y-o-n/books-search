@@ -10,13 +10,7 @@ function booksListReducer(state = initialState,action:{type:string,payload:any})
       return state = action.payload;
     
     case SearchBooksActionTypes.LOAD_MORE_TO_BOOKS_LIST:
-      return {...state,searchResult:[...state.searchResult,...action.payload.searchResult],searchParams:{...state.searchParams,startIndex:action.payload.startIndex}}
-
-    case SearchBooksActionTypes.ADD_BOOK_IMG:
-      const index = state.searchResult.findIndex(el => el.id == action.payload.id)
-      state.searchResult[index].bigImg=action.payload.img
-      return state
-      
+      return {...state,searchResult:[...state.searchResult,...action.payload.searchResult],searchParams:{...state.searchParams,startIndex:action.payload.startIndex}}      
 
     default:
       return state;

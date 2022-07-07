@@ -1,0 +1,12 @@
+.footer {
+  width: 1260px;
+  margin: 0 auto;
+  height: 50px;
+  background-color: rgb(230, 229, 229);
+  text-align: center;
+  padding-top: 15px;
+  box-sizing: border-box;
+}
+.footer span {
+  font-weight: 600;
+}/*# sourceMappingURL=Footer.css.map */

@@ -3,6 +3,7 @@ import SearchPage from './components/SearchPage/SearchPage';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SearchResultPage from './components/SearchResultPage/SearchResultPage';
 import BookPage from './components/BookPage/BookPage';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const basename = document.querySelector('base')?.getAttribute('href') ?? '/'
@@ -14,6 +15,7 @@ function App() {
       <Route path="/" element={<SearchResultPage />}></Route>
       <Route path="book/:id" element={<BookPage />}></Route>
     </Routes>
+    <Footer />
   </BrowserRouter>
   );
 }

@@ -2,24 +2,24 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {useSelector } from 'react-redux';
 import { IStore } from '../../types/types';
+import { APIKey } from '../../APIKey/APIKey';
 import "./BookPage.css"
 
 function BookPage() {
-  const id = useParams().id;
+  const id:any = useParams().id;
   const bookInfo = useSelector((state:IStore) => state.books.searchResult.find((el)=>el.id === id))
-  console.log(bookInfo,"bookInfo")
   const [IMG,setIMG]=useState("")
 
   async function getBookInfo(id:string) {
     try {
-      const response = await fetch(`https://www.googleapis.com/books/v1/volumes/${id}`);
+      const response = await fetch(`https://www.googleapis.com/books/v1/volumes/${id}?key=${APIKey}`);
   
       if (!response.ok) {
         throw new Error(`Request failed with status ${response.status}`);
       }
   
       const data = await response.json();
-      data.then(setIMG(data.volumeInfo.imageLinks.small))
+      setIMG(data.volumeInfo.imageLinks.small)
   
     } catch (err) {
       console.log(err);

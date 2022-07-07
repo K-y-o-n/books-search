@@ -7,6 +7,8 @@ import { SearchBooksActionTypes } from "../../types/types";
 import { ISearchData } from "../../types/types";
 import { APIKey } from "../../APIKey/APIKey";
 import { ILoadMoreData } from "../../types/types";
+import { isLoading } from "../reducers/spinnerReducer";
+
 
 export const booksListAction = (searchData:ISearchData) => ({
   type: SearchBooksActionTypes.ADD_BOOKS_LIST,
@@ -19,8 +21,10 @@ export const loadMoreBooksAction = (loadMoreData:ILoadMoreData) => ({
 });
 
 
+// поиск книг по заданным параметрам
 export const getBooksList = (searchValue:string,categories:string,sortingBy:string) => async (dispatch:Dispatch<AnyAction>) => {
-  
+
+  dispatch(isLoading(true))
   try {
     const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchValue}&orderBy=${sortingBy}&startIndex=0&maxResults=30&key=${APIKey}`);
 
@@ -39,18 +43,19 @@ export const getBooksList = (searchValue:string,categories:string,sortingBy:stri
     }
 
     const searchResult:TSearchResultArray = searchDataFilter(data,categories)
-    // console.log({searchResult,totalItems,searchParams})
-
+    
     dispatch(booksListAction({searchResult,totalItems,searchParams}));
+    dispatch(isLoading(false))
     
   } catch (err) {
     console.log(err);
   }
 };
 
-
+// добавляет еще 30 результатов поиска по клику на кнопку "Load more"
 export const getMoreBooks = (searchValue:string,categories:string,sortingBy:string,startIndex:number) => async (dispatch:Dispatch<AnyAction>) => {
-  
+
+  dispatch(isLoading(true))
   try {
     const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchValue}&orderBy=${sortingBy}&startIndex=${startIndex}&maxResults=30&key=${APIKey}`);
 
@@ -63,6 +68,7 @@ export const getMoreBooks = (searchValue:string,categories:string,sortingBy:stri
     const searchResult:TSearchResultArray = searchDataFilter(data,categories)
 
     dispatch(loadMoreBooksAction({searchResult,startIndex}));
+    dispatch(isLoading(false))
     
   } catch (err) {
     console.log(err);
@@ -70,7 +76,7 @@ export const getMoreBooks = (searchValue:string,categories:string,sortingBy:stri
 };
 
 
-
+// ф. фильтрует полученные результаты поиска по выбранным категориям
 function searchDataFilter(data:any,categories:string) {
   let filteredData;
 
