@@ -6,10 +6,9 @@ import BookPage from './components/BookPage/BookPage';
 import Footer from './components/Footer/Footer';
 
 function App() {
-  const basename = document.querySelector('base')?.getAttribute('href') ?? '/'
   
   return (
-  <BrowserRouter basename={basename}>
+  <BrowserRouter>
     <SearchPage />
     <Routes>
       <Route path="/" element={<SearchResultPage />}></Route>

@@ -2,7 +2,6 @@
   "name": "books-search",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "/booksSearch/",
   "dependencies": {
     "@redux-devtools/extension": "^3.2.2",
     "@reduxjs/toolkit": "^1.8.3",
