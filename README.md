@@ -1,4 +1,4 @@
-## Поиск книг с помощью Google Books API
+## Поиск книг с использованием Google Books API
 
 Необходимо разработать React-приложение поиска книг с помощью Google Books API. Документация: https://developers.google.com/books/docs/v1/using. Для авторизации запросов к API выбрать способ с предоставлением API key (https://developers.google.com/books/docs/v1/using#APIKey).
 
